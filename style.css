@@ -14,6 +14,7 @@ img {
 
 :root {
   --input-border-gradient: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --input-focus: hsl(249, 99%, 64%);
   --red-error: hsl(0, 100%, 66%);
   --white: hsl(0, 0%, 100%);
   --light-gray-violet: hsl(270, 3%, 87%);
@@ -118,19 +119,12 @@ img {
   background-color: var(--white);
   border-radius: 7px;
   border: 0;
-  outline: 3px solid var(--light-gray-violet);
-  outline-offset: -1px;
+  outline: 1px solid var(--light-gray-violet);
+  width: 100%;
 }
 
 .form input:focus {
-  outline: none;
-}
-
-.input__wrapper {
-  width: 100%;
-  background-image: var(--input-border-gradient);
-  padding: 1px;
-  border-radius: 8px;
+  outline-color: var(--input-focus);
 }
 
 .form input::-webkit-input-placeholder {
@@ -157,8 +151,8 @@ img {
   opacity: .5;
 }
 
-.input__wrapper > input {
-  width: 100%;
+.form input.error {
+  outline-color: var(--red-error);
 }
 
 .form__grid,
@@ -168,10 +162,6 @@ img {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-column-gap: .5rem;
-}
-
-.form__grid input {
-  width: 100%;
 }
 
 .button {
