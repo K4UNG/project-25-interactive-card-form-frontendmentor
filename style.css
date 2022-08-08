@@ -110,8 +110,8 @@ img {
   color: var(--very-dark-violet);
   letter-spacing: 1px;
   font-size: .9rem;
-  margin: 1rem 0 .25rem;
-  display: inline-block;
+  margin: 1.5rem 0 .25rem;
+  display: block;
 }
 
 .form input {
@@ -155,6 +155,18 @@ img {
   outline-color: var(--red-error);
 }
 
+.input__wrapper {
+  position: relative;
+}
+
+.error__msg {
+  font-size: .7rem;
+  color: var(--red-error);
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+}
+
 .form__grid,
 .form__date__wrapper {
   display: -ms-grid;
@@ -179,7 +191,7 @@ img {
 }
 
 .button:hover,
-.button:focus {
+.button:focus-visible {
   background-color: transparent;
   color: var(--very-dark-violet);
 }
