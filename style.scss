@@ -30,17 +30,28 @@ img {
     position: relative;
 }
 
+.cards__background {
+    max-height: 350px;
+}
+
+.cards__background--desktop {
+    display: none;
+}
+
 .cards__wrapper {
     width: 90%;
     position: absolute;
     top: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 550px;
+    margin: auto;
 }
 
 .card {
     width: 85%;
     position: absolute;
+    max-width: 300px;
 }
 
 .card>img {
@@ -82,7 +93,7 @@ img {
 
 .card__number {
     margin-top: 1.7125rem;
-    font-size: 5.5vw;
+    font-size: clamp(1rem, 5vw, 1.35rem);
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -102,6 +113,8 @@ img {
 
 .actions {
     padding: 4rem 1rem 2rem;
+    max-width: 500px;
+    margin: auto;
 }
 
 .form label {
@@ -232,5 +245,72 @@ img {
     to {
         opacity: 1;
         transform: none;
+    }
+}
+
+@media (min-width: 1160px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 100vh;
+        align-items: center;
+    }
+
+    .actions {
+        grid-column: span 2;
+    }
+
+    .cards {
+        height: 100%;
+    }
+
+    .cards__background {
+        display: none;
+    }
+
+    .cards__background--desktop {
+        display: unset;
+        max-height: 100vh;
+        height: 100%;
+    }
+
+    .cards__wrapper {
+        position: absolute;
+        height: 400px;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    .card {
+        max-width: 380px;
+    }
+
+    .card__back {
+        bottom: 0;
+        top: unset;
+    }
+
+    .card__front {
+        top: 0;
+    }
+}
+
+@media (min-width: 1300px) {
+    .card__number {
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .cards__wrapper {
+        height: 450px;
+    }
+
+    .cvc {
+        font-size: 1rem;
+    }
+
+    .card__detail {
+        font-size: .9rem;
     }
 }
